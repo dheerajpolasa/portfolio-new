@@ -13,7 +13,9 @@
 
 <nav id="nav">
   <span class="nav-logo" onclick="goTo('hero')">D<span>P</span></span>
-  <ul class="nav-links">
+  <div class="nav-hamburger" id="navHamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  <div class="nav-overlay" id="navOverlay" onclick="toggleNav()"></div>
+  <ul class="nav-links" id="navLinks">
     <li><a onclick="goTo('timeline')">Work</a></li>
     <li><a onclick="goTo('about')">Lore</a></li>
     <li><a onclick="goTo('socials')">Connect</a></li>
@@ -370,6 +372,16 @@
 (function(){
   var dg = document.getElementById('dotGrid');
   for(var i=0;i<50;i++){var s=document.createElement('span');dg.appendChild(s);}
+
+  // ── MOBILE NAV ──
+  window.toggleNav = function(){
+    document.getElementById('navHamburger').classList.toggle('open');
+    document.getElementById('navLinks').classList.toggle('open');
+    document.getElementById('navOverlay').classList.toggle('open');
+  };
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){ if(window.innerWidth<=900) toggleNav(); });
+  });
 
   function goTo(id){ var el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); }
   window.goTo=goTo;
