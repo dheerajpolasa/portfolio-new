@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dheeraj Polasa &mdash; SDE II @ Amazon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;600;700;800&family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="nav">
+  <span class="nav-logo" onclick="goTo('hero')">D<span>P</span></span>
+  <ul class="nav-links">
+    <li><a onclick="goTo('timeline')">Work</a></li>
+    <li><a onclick="goTo('about')">Lore</a></li>
+    <li><a onclick="goTo('socials')">Connect</a></li>
+    <li><a onclick="goTo('contact')">Contact</a></li>
+    <li><a onclick="goTo('resume')" class="nav-cta">Resume</a></li>
+    <li class="theme-switcher">
+      <div class="theme-select-wrapper">
+        <select class="theme-select" id="themePicker" onchange="applyTheme(this.value)">
+          <option value="default">// Default</option>
+          <option value="cars">// Cars</option>
+          <option value="sneakers">// Sneakers</option>
+        </select>
+        <span class="theme-select-arrow">▾</span>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-content">
+    <div class="hero-label">Backend Engineer &middot; Amazon SDE II &middot; Hyderabad, IN</div>
+    <h1 class="hero-name">
+      <span class="line">DHEERAJ</span>
+      <span class="line">POLASA</span>
+    </h1>
+    <p class="hero-title">Building systems at <strong>scale</strong> &nbsp;&middot;&nbsp; Naruto believer &nbsp;&middot;&nbsp; Sneakerhead &nbsp;&middot;&nbsp; Endlessly <strong>curious</strong></p>
+    <div class="hero-tags">
+      <span class="hero-tag active" data-modal="backend">Backend Engineering</span>
+      <span class="hero-tag" data-modal="distributed">Distributed Systems</span>
+      <span class="hero-tag" data-modal="companies">Amazon &middot; PayPal &middot; Doubtnut</span>
+      <span class="hero-tag" data-modal="naruto">Naruto Fan</span>
+      <span class="hero-tag" data-modal="sneakers">Sneaker Collector</span>
+      <span class="hero-tag" data-modal="cars">Car Enthusiast</span>
+    </div>
+    <span class="hero-cta" onclick="goTo('timeline')">View Career Journey &nbsp;&rarr;</span>
+  </div>
+
+  <div class="hero-visual">
+    <div class="video-frame">
+      <div class="video-corner-tr"></div>
+      <div class="video-corner-bl"></div>
+      <div class="video-inner">
+        <video class="naruto-vid" autoplay muted loop playsinline>
+          <source src="naruto.mp4" type="video/mp4">
+        </video>
+        <video class="cars-vid" autoplay muted loop playsinline style="display:none">
+          <source src="cars theme.mp4" type="video/mp4">
+        </video>
+        <video class="sneakers-vid" autoplay muted loop playsinline style="display:none">
+          <source src="sneakers.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+        <div class="video-speedlines"></div>
+        <div class="video-scanlines"></div>
+        <div class="video-label">
+          <span class="video-label-name">BELIEVE IT</span>
+          <span class="video-label-tag">// Naruto Arc</span>
+        </div>
+      </div>
+      <div class="video-badge">&#9889; Current Arc</div>
+    </div>
+    <div class="hero-dot-grid" id="dotGrid"></div>
+  </div>
+
+  <div class="hero-scroll">Scroll to explore</div>
+  <div class="hero-chapter-label">Chapter 001 / Hero Arc</div>
+</section>
+
+<section id="timeline">
+  <div class="section-header"><div class="section-chapter">Chapter 002 &mdash; Career Arc</div><h2 class="section-title">THE JOURNEY</h2></div>
+  <div class="timeline-container">
+    <div class="timeline-line">
+      <div class="timeline-fill"></div>
+      <div class="timeline-icon">
+        <!-- Kunai (default) -->
+        <svg class="tl-icon tl-kunai" viewBox="0 0 24 48" width="18" height="36"><path d="M12 48L9 30H15L12 48Z" fill="var(--orange)"/><rect x="11" y="8" width="2" height="22" fill="var(--orange)" rx="1"/><circle cx="12" cy="4" r="3" fill="none" stroke="var(--orange)" stroke-width="1.5"/></svg>
+        <!-- Speedometer (cars) -->
+        <svg class="tl-icon tl-speedo" viewBox="0 0 32 32" width="26" height="26" style="display:none"><circle cx="16" cy="16" r="13" fill="none" stroke="var(--orange)" stroke-width="1.2" opacity=".3"/><path d="M6,22 A13,13 0 0,1 26,22" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" opacity=".5"/><line id="speedoNeedle" x1="16" y1="16" x2="8" y2="22" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="16" r="2" fill="var(--orange)"/><text x="16" y="29" text-anchor="middle" fill="var(--orange)" font-size="4" font-family="monospace" class="speedo-text">0</text></svg>
+        <!-- Footprint (sneakers) -->
+        <svg class="tl-icon tl-foot" viewBox="0 0 24 36" width="16" height="24" style="display:none"><ellipse cx="12" cy="26" rx="7" ry="9" fill="var(--orange)" opacity=".8"/><circle cx="7" cy="10" r="3" fill="var(--orange)" opacity=".7"/><circle cx="14" cy="7" r="3.2" fill="var(--orange)" opacity=".7"/><circle cx="19" cy="12" r="2.5" fill="var(--orange)" opacity=".6"/><circle cx="4" cy="16" r="2" fill="var(--orange)" opacity=".5"/></svg>
+      </div>
+    </div>
+    <div class="chapter-card"><div class="card-content"><div class="card-num">Chapter 01 &middot; The Beginning</div><div class="card-company">SEARS HOLDINGS</div><div class="card-role">Software Engineering Intern</div><div class="card-date">2019</div></div><div class="chapter-dot"><div class="chapter-dot-inner"></div></div><div class="card-spacer"></div></div>
+    <div class="chapter-card"><div class="card-spacer"></div><div class="chapter-dot"><div class="chapter-dot-inner"></div></div><div class="card-content"><div class="card-num">Chapter 02 &middot; Going Full Time</div><div class="card-company">DOUBTNUT</div><div class="card-role">Full-Time Backend Engineer</div><div class="card-date">Jan 2021</div></div></div>
+    <div class="chapter-card"><div class="card-content"><div class="card-num">Chapter 03 &middot; The Upgrade</div><div class="card-company">PAYPAL</div><div class="card-role">Software Engineer</div><div class="card-date">Aug 2021</div></div><div class="chapter-dot"><div class="chapter-dot-inner"></div></div><div class="card-spacer"></div></div>
+    <div class="chapter-card"><div class="card-spacer"></div><div class="chapter-dot"><div class="chapter-dot-inner"></div></div><div class="card-content"><div class="card-num">Chapter 04 &middot; The Big League</div><div class="card-company">AMAZON</div><div class="card-role">Software Development Engineer I</div><div class="card-date">Apr 2022</div></div></div>
+    <div class="chapter-card"><div class="card-content"><div class="card-num">Chapter 05 &middot; The Promotion Arc</div><div class="card-company">AMAZON</div><div class="card-role">Software Development Engineer II</div><div class="card-date">2025 &mdash; Present</div><span class="card-badge">&#9889; Current Arc</span></div><div class="chapter-dot"><div class="chapter-dot-inner"></div></div><div class="card-spacer"></div></div>
+  </div>
+  <div class="edu-card reveal"><div><div class="edu-label">Foundation Arc &middot; Education</div><div class="edu-school">LOVELY PROFESSIONAL UNIVERSITY</div><div class="edu-degree">B.Tech &nbsp;&middot;&nbsp; Computer Science &amp; Engineering</div></div><div class="edu-year">2020</div></div>
+</section>
+
+<div class="resume-strip" id="resume">
+  <div class="resume-card reveal"><div><div class="resume-title">GRAB MY RESUME</div><div class="resume-sub">Updated &middot; 2025 &middot; PDF Format</div></div><a href="#" class="resume-btn" download>&darr; &nbsp; Download Resume</a></div>
+</div>
+
+<section id="about">
+  <div class="section-header"><div class="section-chapter">Chapter 003 &mdash; The Lore</div><h2 class="section-title">THE PERSON</h2></div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>Backend engineer by trade, <strong>curious human by nature</strong>. I have built systems that handle millions of users at companies like <em>Amazon</em> and <em>PayPal</em> &mdash; but the laptop closing is where the real arc begins.</p>
+      <p>I relate deeply to <strong>Naruto Uzumaki</strong> &mdash; the grind, the growth, the absolute refusal to give up no matter how brutal the arc gets. <em>Believe it.</em></p>
+      <p><strong>Attack on Titan</strong> hit different. The moral complexity, the stakes, the storytelling. That is how I want to approach engineering &mdash; deeply, with intention and weight.</p>
+      <p>I love picking up things that have <strong>nothing</strong> to do with my job &mdash; manga drawing, perfumery, the psychology of sneaker drops, cars. The world is massive and <em>opportunities are endless</em>.</p>
+      <p>Currently watching the <strong>Vitrus GT facelift</strong> announcements like a hawk. Open to interesting convos, collabs, and rabbit holes.</p>
+    </div>
+    <div class="reveal">
+      <div class="collectibles-label">// Collectibles &amp; Interests</div>
+      <div class="collectible-group"><div class="collectible-group-title">&#128249; Sneaker Rotation</div><div class="collectible-items"><span class="collectible-item">Jordan 4 Military Blue</span><span class="collectible-item">Jordan 1 Mocha Low</span><span class="collectible-item">Nike Dunks</span><span class="collectible-item">NB 1080 V13</span><span class="collectible-item">Adidas Superstar</span><span class="collectible-item">Adidas Campus</span><span class="collectible-item">Comet</span></div></div>
+      <div class="collectible-group"><div class="collectible-group-title">&#129668; Fragrance Shelf</div><div class="collectible-items"><span class="collectible-item">Dior Sauvage</span><span class="collectible-item">YSL Y</span><span class="collectible-item">Afnan 9 PM</span><span class="collectible-item">Gold Riffs Reserve</span></div></div>
+      <div class="collectible-group"><div class="collectible-group-title">&#127823; Anime &amp; Art</div><div class="collectible-items"><span class="collectible-item">Naruto</span><span class="collectible-item">Attack on Titan</span><span class="collectible-item">Manga Drawing</span></div></div>
+      <div class="stat-block"><div class="stat-block-title">// Character Power Levels</div>
+        <div class="stat-row"><span class="stat-name">Backend Mastery</span><div class="stat-track"><div class="stat-fill" data-w="93"></div></div><span class="stat-val">9300</span></div>
+        <div class="stat-row"><span class="stat-name">Curiosity Level</span><div class="stat-track"><div class="stat-fill" data-w="99"></div></div><span class="stat-val">9900</span></div>
+        <div class="stat-row"><span class="stat-name">Naruto Knowledge</span><div class="stat-track"><div class="stat-fill" data-w="97"></div></div><span class="stat-val">9700</span></div>
+        <div class="stat-row"><span class="stat-name">Sneaker Drip</span><div class="stat-track"><div class="stat-fill" data-w="88"></div></div><span class="stat-val">8800</span></div>
+        <div class="stat-row"><span class="stat-name">Car Enthusiasm</span><div class="stat-track"><div class="stat-fill" data-w="85"></div></div><span class="stat-val">8500</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="socials">
+  <div class="section-header"><div class="section-chapter">Chapter 004 &mdash; Find Me</div><h2 class="section-title">CONNECT</h2></div>
+  <div class="socials-grid">
+    <a href="https://leetcode.com/u/dheerajpolasa/" target="_blank" class="social-card"><div class="social-icon">&#128104;&#8205;&#128187;</div><div class="social-platform">LEETCODE</div><div class="social-handle">// dheerajpolasa</div><div class="social-arrow">&#8599;</div></a>
+    <a href="https://www.linkedin.com/in/dheerajpolasa" target="_blank" class="social-card"><div class="social-icon">&#128188;</div><div class="social-platform">LINKEDIN</div><div class="social-handle">// dheerajpolasa</div><div class="social-arrow">&#8599;</div></a>
+    <a href="https://www.instagram.com/dheeraj_polasa" target="_blank" class="social-card"><div class="social-icon">&#128247;</div><div class="social-platform">INSTAGRAM</div><div class="social-handle">// dheeraj_polasa</div><div class="social-arrow">&#8599;</div></a>
+    <a href="https://www.hackerrank.com/profile/dheerajpolasa40" target="_blank" class="social-card"><div class="social-icon">&#9889;</div><div class="social-platform">HACKERRANK</div><div class="social-handle">// dheerajpolasa40</div><div class="social-arrow">&#8599;</div></a>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-header"><div class="section-chapter">Chapter 005 &mdash; Let's Talk</div><h2 class="section-title">HIT ME UP</h2></div>
+  <div class="contact-grid">
+    <div class="reveal">
+      <p class="contact-intro">Got an interesting <strong>project</strong>? Want to talk <strong>distributed systems</strong>? Debate whether Itachi could beat Gojo? Rate each other's sneaker rotations?<br><br>Open to all of it. Let's connect.</p>
+      <a href="mailto:dheerajpolasa40@gmail.com" class="contact-email">dheerajpolasa40@gmail.com &nbsp;&rarr;</a>
+    </div>
+    <div class="reveal">
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row"><div class="form-group"><label class="form-label">Name</label><input type="text" name="name" class="form-input" placeholder="Your name" required></div><div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="your@email.com" required></div></div>
+        <div class="form-group"><label class="form-label">Subject</label><input type="text" name="subject" class="form-input" placeholder="What is this about?"></div>
+        <div class="form-group"><label class="form-label">Message</label><textarea name="message" class="form-textarea" placeholder="What is on your mind?" required></textarea></div>
+        <div class="form-status" id="formStatus"></div>
+        <button type="submit" class="form-submit">Send Message &nbsp;&rarr;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">D<span>P</span></div>
+  <div class="footer-text">Built with passion &nbsp;&middot;&nbsp; Powered by <em>curiosity</em> &nbsp;&middot;&nbsp; &copy; 2025 Dheeraj Polasa</div>
+  <div class="footer-text">Backend Engineer &nbsp;&middot;&nbsp; <em>Amazon SDE II</em></div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-panel">
+    <div class="modal-header">
+      <div class="modal-icon" id="mIcon"></div>
+      <div class="modal-tb"><div class="modal-ch" id="mCh"></div><div class="modal-ti" id="mTi"></div><div class="modal-su" id="mSu"></div></div>
+      <button class="modal-close" id="mClose">&#10005;</button>
+    </div>
+    <div class="modal-body" id="mBody"></div>
+  </div>
+</div>
+
+<!-- MODAL TEMPLATES -->
+<div id="tpl-backend" style="display:none">
+  <div class="modal-stats">
+    <div class="modal-stat-row"><span class="modal-stat-name">Java / Spring Boot</span><div class="modal-stat-track"><div class="modal-stat-fill" data-w="95"></div></div><span class="modal-stat-val">95%</span></div>
+    <div class="modal-stat-row"><span class="modal-stat-name">Python</span><div class="modal-stat-track"><div class="modal-stat-fill" data-w="85"></div></div><span class="modal-stat-val">85%</span></div>
+    <div class="modal-stat-row"><span class="modal-stat-name">Node.js</span><div class="modal-stat-track"><div class="modal-stat-fill" data-w="78"></div></div><span class="modal-stat-val">78%</span></div>
+    <div class="modal-stat-row"><span class="modal-stat-name">SQL / NoSQL</span><div class="modal-stat-track"><div class="modal-stat-fill" data-w="90"></div></div><span class="modal-stat-val">90%</span></div>
+    <div class="modal-stat-row"><span class="modal-stat-name">REST API Design</span><div class="modal-stat-track"><div class="modal-stat-fill" data-w="96"></div></div><span class="modal-stat-val">96%</span></div>
+    <div class="modal-stat-row"><span class="modal-stat-name">Microservices</span><div class="modal-stat-track"><div class="modal-stat-fill" data-w="88"></div></div><span class="modal-stat-val">88%</span></div>
+  </div>
+  <div class="modal-pills"><span class="modal-pill hi">Java</span><span class="modal-pill hi">Spring</span><span class="modal-pill hi">AWS</span><span class="modal-pill">Python</span><span class="modal-pill">Kafka</span><span class="modal-pill">Redis</span><span class="modal-pill">Docker</span><span class="modal-pill">PostgreSQL</span><span class="modal-pill">DynamoDB</span><span class="modal-pill">GraphQL</span><span class="modal-pill">Kubernetes</span><span class="modal-pill">CI/CD</span></div>
+  <div class="modal-quote">I don't just write code &mdash; I build <strong>systems</strong> that hold up when millions of people are using them at the same time.</div>
+</div>
+<div id="tpl-distributed" style="display:none">
+  <div class="modal-grid"><div class="modal-card"><div class="modal-card-label">Consensus</div><div class="modal-card-val">Raft / Paxos</div></div><div class="modal-card"><div class="modal-card-label">Messaging</div><div class="modal-card-val">Kafka / SQS</div></div><div class="modal-card"><div class="modal-card-label">Caching</div><div class="modal-card-val">Redis / CDN</div></div><div class="modal-card"><div class="modal-card-label">Load Balance</div><div class="modal-card-val">ALB / NLB</div></div><div class="modal-card"><div class="modal-card-label">Storage</div><div class="modal-card-val">S3 / DynamoDB</div></div><div class="modal-card"><div class="modal-card-label">Observability</div><div class="modal-card-val">CloudWatch</div></div></div>
+  <div class="modal-desc">Deeply interested in how large systems like <strong>Amazon's infrastructure</strong> handle failures at global scale. I think about tradeoffs &mdash; <em>availability vs consistency</em>, fan-out, sharding &mdash; not just code.<br><br>Currently exploring <strong>event-driven architectures</strong> and service mesh patterns.</div>
+</div>
+<div id="tpl-companies" style="display:none">
+  <div class="shelf"><div class="shelf-row"><span class="shelf-name">Sears Holdings Corporation</span><span class="shelf-tag">2019 &middot; Intern</span></div><div class="shelf-row"><span class="shelf-name">Doubtnut</span><span class="shelf-tag">Jan 2021 &middot; Backend Eng</span></div><div class="shelf-row"><span class="shelf-name">PayPal</span><span class="shelf-tag">Aug 2021 &middot; SWE</span></div><div class="shelf-row"><span class="shelf-name">Amazon &mdash; SDE I</span><span class="shelf-tag">Apr 2022</span></div><div class="shelf-row" style="border-color:rgba(255,85,0,.5);background:rgba(255,85,0,.04)"><span class="shelf-name" style="color:var(--orange)">Amazon &mdash; SDE II &#9889;</span><span class="shelf-tag" style="color:var(--gold)">2025 &middot; Promoted</span></div></div>
+  <div class="modal-quote">Each company was a <strong>new arc</strong>. Different boss, different jutsu to learn. Still going.</div>
+</div>
+<div id="tpl-naruto" style="display:none">
+  <div class="modal-quote"><strong>I'm not gonna run away, I never go back on my word!</strong> That's my ninja way. &mdash; Naruto<br><br>This isn't just a show. It's a <em>blueprint for how to approach life</em>.</div>
+  <div class="modal-grid"><div class="modal-card"><div class="modal-card-label">Favourite Arc</div><div class="modal-card-val">Pain Arc</div></div><div class="modal-card"><div class="modal-card-label">Also Watching</div><div class="modal-card-val">AoT</div></div><div class="modal-card"><div class="modal-card-label">Hobby</div><div class="modal-card-val">Manga Art</div></div></div>
+  <div class="modal-pills"><span class="modal-pill hi">Naruto</span><span class="modal-pill hi">Attack on Titan</span><span class="modal-pill">Pain Arc</span><span class="modal-pill">Itachi</span><span class="modal-pill">Levi</span><span class="modal-pill">Eren</span><span class="modal-pill">Manga Drawing</span></div>
+  <div class="modal-desc">The <strong>underdog grind</strong>, being written off early, proving everyone wrong through sheer will. AoT's <em>moral complexity</em> still lives rent-free in my head.</div>
+</div>
+<div id="tpl-sneakers" style="display:none">
+  <div class="shelf"><div class="shelf-row"><span class="shelf-name">Jordan 4 Military Blue</span><span class="shelf-tag">Heat</span></div><div class="shelf-row"><span class="shelf-name">Jordan 1 Mocha Low</span><span class="shelf-tag">Clean</span></div><div class="shelf-row"><span class="shelf-name">Nike Dunks</span><span class="shelf-tag">Staple</span></div><div class="shelf-row"><span class="shelf-name">New Balance 1080 V13</span><span class="shelf-tag">Daily Driver</span></div><div class="shelf-row"><span class="shelf-name">Adidas Superstar</span><span class="shelf-tag">Classic</span></div><div class="shelf-row"><span class="shelf-name">Adidas Campus</span><span class="shelf-tag">Low-key Drip</span></div><div class="shelf-row"><span class="shelf-name">Comet</span><span class="shelf-tag">Sleeper Pick</span></div></div>
+  <div class="modal-desc">7 pairs deep. Fragrance shelf: <em>Dior Sauvage</em>, <em>YSL Y</em>, <em>Afnan 9 PM</em>, <em>Gold Riffs Reserve</em>. The fit has to be complete.</div>
+</div>
+<div id="tpl-cars" style="display:none">
+  <div class="modal-quote">Not just cars &mdash; it's the <strong>engineering behind them</strong>. Distributed systems but on wheels.</div>
+  <style>
+  .car-list{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.4rem}
+  .car-row{display:flex;align-items:center;gap:1rem;padding:.65rem .9rem;border:1px solid var(--border);transition:border-color .25s,background .25s;position:relative;}
+  .car-row:hover{border-color:rgba(255,85,0,.4);background:rgba(255,85,0,.03)}
+  .car-row.fav::before{content:'★';position:absolute;right:.9rem;top:50%;transform:translateY(-50%);font-size:.7rem;color:var(--orange);}
+  .car-brand-icon{width:32px;height:32px;flex-shrink:0;display:flex;align-items:center;justify-content:center;opacity:.85;transition:opacity .25s;}
+  .car-row:hover .car-brand-icon{opacity:1;}
+  .car-info{flex:1}
+  .car-name{font-size:.72rem;color:var(--white);font-weight:600;line-height:1.2}
+  .car-sub{font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.15rem;}
+  .car-tag{font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);border:1px solid rgba(255,85,0,.3);padding:.15rem .45rem;margin-left:auto;flex-shrink:0;}
+  </style>
+  <div class="car-list">
+    <!-- VW Virtus GT -->
+    <div class="car-row fav">
+      <div class="car-brand-icon">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5" fill="none" opacity=".3"/>
+          <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1" fill="none" opacity=".2"/>
+          <text x="16" y="20.5" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="11" fill="currentColor">VW</text>
+        </svg>
+      </div>
+      <div class="car-info"><div class="car-name">Virtus GT</div><div class="car-sub">Volkswagen &middot; 1.0 TSI Turbo</div></div>
+      <span class="car-tag">Daily Target</span>
+    </div>
+    <!-- VW Jetta -->
+    <div class="car-row">
+      <div class="car-brand-icon">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5" fill="none" opacity=".3"/>
+          <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1" fill="none" opacity=".2"/>
+          <text x="16" y="20.5" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="11" fill="currentColor">VW</text>
+        </svg>
+      </div>
+      <div class="car-info"><div class="car-name">Jetta</div><div class="car-sub">Volkswagen &middot; Sport Line DSG</div></div>
+    </div>
+    <!-- VW Golf GTI -->
+    <div class="car-row fav">
+      <div class="car-brand-icon">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5" fill="none" opacity=".3"/>
+          <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1" fill="none" opacity=".2"/>
+          <text x="16" y="20.5" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="11" fill="currentColor">VW</text>
+        </svg>
+      </div>
+      <div class="car-info"><div class="car-name">Golf GTI Mk8</div><div class="car-sub">Volkswagen &middot; 2.0 TSI 245hp</div></div>
+      <span class="car-tag">Hot Hatch</span>
+    </div>
+    <!-- VW Passat -->
+    <div class="car-row">
+      <div class="car-brand-icon">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5" fill="none" opacity=".3"/>
+          <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1" fill="none" opacity=".2"/>
+          <text x="16" y="20.5" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="11" fill="currentColor">VW</text>
+        </svg>
+      </div>
+      <div class="car-info"><div class="car-name">Passat</div><div class="car-sub">Volkswagen &middot; 2.0 TDI Elegance</div></div>
+    </div>
+    <!-- BMW M5 Competition -->
+    <div class="car-row fav">
+      <div class="car-brand-icon">
+        <!-- BMW roundel SVG -->
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+          <circle cx="16" cy="16" r="14" stroke="#6699CC" stroke-width="1.5" fill="none" opacity=".5"/>
+          <path d="M16 2 A14 14 0 0 1 30 16 L16 16 Z" fill="#1155AA" opacity=".6"/>
+          <path d="M2 16 A14 14 0 0 1 16 2 L16 16 Z" fill="white" opacity=".15"/>
+          <path d="M16 30 A14 14 0 0 1 2 16 L16 16 Z" fill="#1155AA" opacity=".6"/>
+          <path d="M30 16 A14 14 0 0 1 16 30 L16 16 Z" fill="white" opacity=".15"/>
+          <circle cx="16" cy="16" r="6" stroke="#6699CC" stroke-width="1" fill="none" opacity=".5"/>
+          <text x="16" y="19" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="5.5" fill="currentColor" opacity=".9">BMW</text>
+        </svg>
+      </div>
+      <div class="car-info"><div class="car-name">M5 Competition</div><div class="car-sub">BMW &middot; 4.4 V8 Biturbo 625hp</div></div>
+      <span class="car-tag">Apex Predator</span>
+    </div>
+    <!-- Porsche 911 GTS -->
+    <div class="car-row fav">
+      <div class="car-brand-icon">
+        <!-- Porsche crest simplified -->
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+          <rect x="2" y="4" width="28" height="24" rx="1" stroke="currentColor" stroke-width="1.2" fill="none" opacity=".3"/>
+          <line x1="16" y1="4" x2="16" y2="28" stroke="currentColor" stroke-width="1" opacity=".4"/>
+          <line x1="2" y1="16" x2="30" y2="16" stroke="currentColor" stroke-width="1" opacity=".4"/>
+          <text x="16" y="13" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="5" fill="currentColor" opacity=".9">911</text>
+          <text x="16" y="25" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="4.5" fill="currentColor" opacity=".7">PORSCHE</text>
+        </svg>
+      </div>
+      <div class="car-info"><div class="car-name">911 GTS</div><div class="car-sub">Porsche &middot; 3.0 Flat-6 Turbo 480hp</div></div>
+      <span class="car-tag">Masterpiece</span>
+    </div>
+    <!-- Mercedes AMG -->
+    <div class="car-row">
+      <div class="car-brand-icon">
+        <!-- Mercedes 3-pointed star -->
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5" fill="none" opacity=".35"/>
+          <polygon points="16,3 19.5,13.5 30,13.5 21,20 24.5,30.5 16,24 7.5,30.5 11,20 2,13.5 12.5,13.5" stroke="currentColor" stroke-width=".8" fill="none" opacity=".0"/>
+          <!-- simplified 3-point star -->
+          <line x1="16" y1="5" x2="16" y2="16" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+          <line x1="16" y1="16" x2="6" y2="24" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+          <line x1="16" y1="16" x2="26" y2="24" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+          <circle cx="16" cy="16" r="2.5" fill="currentColor" opacity=".6"/>
+          <text x="16" y="29" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="4" fill="currentColor" opacity=".6">AMG</text>
+        </svg>
+      </div>
+      <div class="car-info"><div class="car-name">AMG E63 S Sedan</div><div class="car-sub">Mercedes-AMG &middot; 4.0 V8 612hp 4MATIC+</div></div>
+    </div>
+    <!-- Skoda Octavia vRS -->
+    <div class="car-row">
+      <div class="car-brand-icon">
+        <!-- Skoda winged arrow simplified -->
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5" fill="none" opacity=".3"/>
+          <path d="M8 12 L16 8 L24 12 L20 16 L24 20 L16 24 L8 20 L12 16 Z" stroke="currentColor" stroke-width="1.1" fill="none" opacity=".7"/>
+          <text x="16" y="19" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="5" fill="currentColor" opacity=".9">vRS</text>
+        </svg>
+      </div>
+      <div class="car-info"><div class="car-name">Octavia vRS</div><div class="car-sub">Škoda &middot; 2.0 TSI 245hp DSG 4x4</div></div>
+      <span class="car-tag">Sleeper King</span>
+    </div>
+    <!-- Honda Civic Type R -->
+    <div class="car-row fav">
+      <div class="car-brand-icon">
+        <!-- Honda H logo simplified -->
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+          <rect x="2" y="3" width="28" height="26" rx="3" stroke="currentColor" stroke-width="1.3" fill="none" opacity=".3"/>
+          <line x1="10" y1="9" x2="10" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+          <line x1="22" y1="9" x2="22" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+          <line x1="10" y1="16" x2="22" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+        </svg>
+      </div>
+      <div class="car-info"><div class="car-name">Civic Type R FL5</div><div class="car-sub">Honda &middot; 2.0 VTEC Turbo 329hp 6MT</div></div>
+      <span class="car-tag">Track Beast</span>
+    </div>
+  </div>
+  <div class="modal-desc">Also fascinated by <em>EV architecture</em> &mdash; from motor controllers to OTA firmware updates. <strong>Backend engineering at 200km/h.</strong></div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="application/json" id="modal-meta">
+{
+  "backend":     { "icon": "⚙️",  "ch": "// Skill Scroll",   "ti": "BACKEND ENGINEERING",  "su": "5+ years building things that hold up at scale" },
+  "distributed": { "icon": "🌐",  "ch": "// Architecture",    "ti": "DISTRIBUTED SYSTEMS",   "su": "CAP theorem, eventual consistency, living with failure" },
+  "companies":   { "icon": "🏢",  "ch": "// Career Arc",      "ti": "THE COMPANIES",         "su": "From intern to SDE II — each chapter shaped the engineer" },
+  "naruto":      { "icon": "🍃",  "ch": "// Personal Canon",  "ti": "NARUTO FAN",            "su": "The grind, the growth, the refusal to quit" },
+  "sneakers":    { "icon": "👟",  "ch": "// Collector Arc",   "ti": "SNEAKER COLLECTOR",     "su": "The rotation is real. Every pair has a story." },
+  "cars":        { "icon": "🚗",  "ch": "// Dream Garage",    "ti": "CAR ENTHUSIAST",        "su": "Watching the Vitrus GT facelift like a hawk" }
+}
+</script>
+
+<script>
+(function(){
+  var dg = document.getElementById('dotGrid');
+  for(var i=0;i<50;i++){var s=document.createElement('span');dg.appendChild(s);}
+
+  function goTo(id){ var el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); }
+  window.goTo=goTo;
+
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){ nav.classList.toggle('scrolled',window.scrollY>50); },{passive:true});
+
+  var io=new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); }); },{threshold:0.12});
+  document.querySelectorAll('.reveal,.chapter-card').forEach(function(el){ io.observe(el); });
+
+  var sio=new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ document.querySelectorAll('.stat-fill').forEach(function(f){ f.style.width=f.dataset.w+'%'; }); } }); },{threshold:0.4});
+  var sb=document.querySelector('.stat-block'); if(sb) sio.observe(sb);
+
+  var form=document.getElementById('contactForm'), fst=document.getElementById('formStatus');
+  form.addEventListener('submit',function(e){ e.preventDefault(); fst.textContent='// Sending...'; fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}}).then(function(r){ fst.textContent=r.ok?'// Sent! Will be in touch soon.':'// Error. Email directly.'; if(r.ok) form.reset(); }).catch(function(){ fst.textContent='// Network error.'; }); });
+
+  var meta=JSON.parse(document.getElementById('modal-meta').textContent);
+  var overlay=document.getElementById('modalOverlay'),mIcon=document.getElementById('mIcon'),mCh=document.getElementById('mCh'),mTi=document.getElementById('mTi'),mSu=document.getElementById('mSu'),mBody=document.getElementById('mBody'),mClose=document.getElementById('mClose');
+
+  function openModal(key){ var m=meta[key]; var tpl=document.getElementById('tpl-'+key); if(!m||!tpl) return; mIcon.textContent=m.icon; mCh.textContent=m.ch; mTi.textContent=m.ti; mSu.textContent=m.su; mBody.innerHTML=tpl.innerHTML; requestAnimationFrame(function(){ requestAnimationFrame(function(){ mBody.querySelectorAll('.modal-stat-fill').forEach(function(f){ f.style.width=f.dataset.w+'%'; }); mBody.querySelectorAll('.modal-pill').forEach(function(p,i){ p.style.animationDelay=(i*.05)+'s'; }); }); }); overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeModal(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
+
+  document.querySelectorAll('[data-modal]').forEach(function(el){ el.addEventListener('click',function(){ openModal(el.dataset.modal); }); });
+  mClose.addEventListener('click',closeModal);
+  overlay.addEventListener('click',function(e){ if(e.target===overlay) closeModal(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeModal(); });
+
+  // ── THEME SWITCHER ──
+  var themeSwaps = {
+    '.hero-chapter-label': { cars: 'LAP 001 / Pole Position', sneakers: 'DROP 001 / Grail Status', def: 'Chapter 001 / Hero Arc' },
+    '.video-label-tag': { cars: '// Garage Mode', sneakers: '// Sole Files', def: '// Naruto Arc' },
+    '.video-badge': { cars: '⚡ DREAM GARAGE', sneakers: '⚡ HEAT CHECK', def: '⚡ Current Arc' },
+    '.video-label-name': { cars: 'DREAM GARAGE', sneakers: 'LOST & FOUND', def: 'BELIEVE IT' }
+  };
+  var sectionSwaps = [
+    { sel: '.section-chapter', idx: 0, cars: 'Lap 002 — Career Circuit', sneakers: 'Drop 002 — The Hustle', def: 'Chapter 002 — Career Arc' },
+    { sel: '.section-chapter', idx: 1, cars: 'Lap 003 — Under the Hood', sneakers: 'Drop 003 — The Collection', def: 'Chapter 003 — The Lore' },
+    { sel: '.section-chapter', idx: 2, cars: 'Lap 004 — Pit Lane', sneakers: 'Drop 004 — The Circle', def: 'Chapter 004 — Find Me' },
+    { sel: '.section-chapter', idx: 3, cars: 'Lap 005 — Flag Down', sneakers: 'Drop 005 — Cop or Drop', def: 'Chapter 005 — Let\'s Talk' }
+  ];
+  var cardSwaps = [
+    { cars: 'Lap 01 · First Gear', sneakers: 'Drop 01 · First Cop', def: 'Chapter 01 · The Beginning' },
+    { cars: 'Lap 02 · Gaining Speed', sneakers: 'Drop 02 · Building the Rotation', def: 'Chapter 02 · Going Full Time' },
+    { cars: 'Lap 03 · Turbo Kick', sneakers: 'Drop 03 · Hype Season', def: 'Chapter 03 · The Upgrade' },
+    { cars: 'Lap 04 · Pole Position', sneakers: 'Drop 04 · Grail Acquired', def: 'Chapter 04 · The Big League' },
+    { cars: 'Lap 05 · Victory Lap', sneakers: 'Drop 05 · Sole Supremacy', def: 'Chapter 05 · The Promotion Arc' }
+  ];
+  var eduSwap = { cars: 'Pit Stop · Education', sneakers: 'Unboxing · Education', def: 'Foundation Arc · Education' };
+  var cardBadgeSwap = { cars: '⚡ Current Lap', sneakers: '⚡ Latest Drop', def: '⚡ Current Arc' };
+  var heroLabelSwap = { cars: 'Car Enthusiast &middot; VW Loyalist &middot; Hyderabad, IN', sneakers: 'Sneakerhead &middot; Jordan Collector &middot; Hyderabad, IN' };
+
+  function applyTheme(theme) {
+    var root = document.documentElement;
+    var vids = { naruto: document.querySelector('.naruto-vid'), cars: document.querySelector('.cars-vid'), sneakers: document.querySelector('.sneakers-vid') };
+    var key = (theme === 'cars' || theme === 'sneakers') ? theme : 'def';
+
+    // Set or remove data-theme
+    if (theme === 'cars' || theme === 'sneakers') { root.setAttribute('data-theme', theme); }
+    else { root.removeAttribute('data-theme'); }
+
+    // Toggle videos
+    for (var v in vids) { if (vids[v]) { vids[v].style.display = 'none'; vids[v].pause(); } }
+    var activeVid = theme === 'cars' ? vids.cars : theme === 'sneakers' ? vids.sneakers : vids.naruto;
+    if (activeVid) { activeVid.style.display = ''; activeVid.play(); }
+
+    // Hero label
+    var heroLabel = document.querySelector('.hero-label');
+    if (heroLabel && !heroLabel.dataset.orig) heroLabel.dataset.orig = heroLabel.innerHTML;
+    if (heroLabelSwap[key]) { if (heroLabel) heroLabel.innerHTML = heroLabelSwap[key]; }
+    else { if (heroLabel && heroLabel.dataset.orig) heroLabel.innerHTML = heroLabel.dataset.orig; }
+    // Swap single elements
+    for (var s in themeSwaps) { var el = document.querySelector(s); if (el) el.textContent = themeSwaps[s][key]; }
+    // Swap section chapters
+    var secs = document.querySelectorAll('.section-chapter');
+    sectionSwaps.forEach(function(sw) { if (secs[sw.idx]) secs[sw.idx].textContent = sw[key]; });
+    // Swap card nums
+    var nums = document.querySelectorAll('.card-num');
+    cardSwaps.forEach(function(sw, i) { if (nums[i]) nums[i].textContent = sw[key]; });
+    // Swap edu label
+    var eduLabel = document.querySelector('.edu-label');
+    if (eduLabel) eduLabel.textContent = eduSwap[key];
+    // Swap card badge
+    var cb = document.querySelector('.card-badge');
+    if (cb) cb.textContent = cardBadgeSwap[key];
+
+    document.querySelectorAll('.reveal,.chapter-card').forEach(function(el){
+      if (!el.classList.contains('visible')) io.observe(el);
+    });
+
+    // Toggle timeline icons
+    var icons = {def:'tl-kunai',cars:'tl-speedo',sneakers:'tl-foot'};
+    document.querySelectorAll('.tl-icon').forEach(function(ic){ic.style.display='none';});
+    var activeIcon = document.querySelector('.'+icons[key]);
+    if(activeIcon) activeIcon.style.display='block';
+  }
+  window.applyTheme = applyTheme;
+
+  // ── TIMELINE SCROLL PROGRESS ──
+  var tlContainer = document.querySelector('.timeline-container');
+  var tlFill = document.querySelector('.timeline-fill');
+  var tlIcon = document.querySelector('.timeline-icon');
+  var speedoNeedle = document.getElementById('speedoNeedle');
+  var speedoText = document.querySelector('.speedo-text');
+  var curTheme = function(){ return document.documentElement.getAttribute('data-theme')||'default'; };
+
+  function getDotOffsets(){
+    var dots = tlContainer.querySelectorAll('.chapter-dot');
+    if(!dots.length) return {first:0,last:0,dots:[]};
+    var cTop = tlContainer.getBoundingClientRect().top + window.scrollY;
+    var arr = [];
+    dots.forEach(function(d){ arr.push(d.getBoundingClientRect().top + window.scrollY - cTop + d.offsetHeight/2); });
+    return {first:arr[0], last:arr[arr.length-1], dots:arr, els:dots};
+  }
+
+  window.addEventListener('scroll', function(){
+    if(!tlContainer) return;
+    var offsets = getDotOffsets();
+    var range = offsets.last - offsets.first;
+    if(range<=0) return;
+    var rect = tlContainer.getBoundingClientRect();
+    var viewMid = window.innerHeight * 0.5;
+    var progress = (viewMid - rect.top - offsets.first) / range;
+    var pct = Math.max(0, Math.min(1, progress));
+    var posY = offsets.first + pct * range;
+    tlFill.style.top = offsets.first + 'px';
+    tlFill.style.height = (pct * range) + 'px';
+    tlIcon.style.top = posY + 'px';
+    // Illuminate dots when icon passes them
+    offsets.els.forEach(function(dot, i){
+      if(posY >= offsets.dots[i] - 10){
+        dot.querySelector('.chapter-dot-inner').classList.add('lit');
+      } else {
+        dot.querySelector('.chapter-dot-inner').classList.remove('lit');
+      }
+    });
+    // Speedometer needle rotation (-120 to +120 deg) and readout
+    if(speedoNeedle && curTheme()==='cars'){
+      var angle = -120 + pct * 240;
+      speedoNeedle.setAttribute('transform','rotate('+angle+' 16 16)');
+      if(speedoText) speedoText.textContent = Math.round(pct*100);
+    }
+    // Footprint bounce
+    var foot = document.querySelector('.tl-foot');
+    if(foot && curTheme()==='sneakers'){
+      foot.style.transform = 'scale('+(0.9+Math.abs(Math.sin(pct*Math.PI*5))*0.3)+')';
+    }
+  },{passive:true});
+
+})();
+</script>
+</body>
+</html>
